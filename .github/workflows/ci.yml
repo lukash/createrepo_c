@@ -48,7 +48,8 @@ jobs:
       - name: Check out ci-dnf-stack
         uses: actions/checkout@v2
         with:
-          repository: rpm-software-management/ci-dnf-stack
+          repository: lukash/ci-dnf-stack
+          ref: broken-crc
 
       - name: Run Integration Tests
         uses: ./.github/actions/integration-tests
