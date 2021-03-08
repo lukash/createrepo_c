@@ -55,3 +55,16 @@ jobs:
         with:
           suite: createrepo_c
           package-urls: ${{needs.copr-build.outputs.package-urls}}
+
+      - name: Publish Test Report
+        if: always()
+        uses: scacap/action-surefire-report@v1
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          report_paths: test-results/**/*.xml
+            #
+            #      - name: Publish test results
+            #        uses: EnricoMi/publish-unit-test-result-action@v1
+            #        if: always()
+            #        with:
+            #          files: test-results/**/*.xml
