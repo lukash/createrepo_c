@@ -1,5 +1,5 @@
 # createrepo_c
-
+HI
 C implementation of createrepo
 
 Run `createrepo -h` for usage syntax.
